@@ -3,7 +3,7 @@
        default value is false as modal is closed when page is loaded 
     -->
     <aura:attribute name="isModalOpen" type="boolean" default="false" />
-    <aura:attribute name = "recipeName" type = "String"/>
+    <aura:attribute name = "recipeName" type = "Recipe__c"/>
     <aura:attribute name = "recipeSummary" type = "String"/>
     <aura:attribute name = "recipeIngredients" type = "String"/>
     <aura:attribute name = "recipeInstructions" type = "String"/>
@@ -12,7 +12,7 @@
     <aura:attribute name="recipeID" type="String" />
 
     <div>
-        <lightning:button variant="brand" label="See Recipe" onclick="{! c.openModel }" />
+        <lightning:button variant="brand" label="{!v.recipeName.Name}" onclick="{! c.openModel }" />
         <!--Use aura:if tag to display/hide popup based on isModalOpen value-->
         <aura:if isTrue="{!v.isModalOpen}">
 
@@ -25,7 +25,7 @@
                     <header class="slds-modal__header">
                         <lightning:buttonIcon iconName="utility:close" onclick="{! c.closeModel }"
                             alternativeText="close" variant="bare-inverse" class="slds-modal__close" />
-                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{!v.recipeName}</h2>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{!v.recipeName.Name}</h2>
                     </header>
 
                     <!--Modal/Popup Box Body Starts here-->

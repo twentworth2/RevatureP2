@@ -10,6 +10,7 @@
                 var recipeInfo =  response.getReturnValue();
                 component.set("v.recipeNames", recipeInfo);
                 console.log(recipeInfo);
+                console.log(response.getReturnValue());
             }
             else {
                 console.log("Failed with state: " + state);

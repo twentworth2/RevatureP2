@@ -39,11 +39,11 @@ public class foodDatabase {
     }
 
     @AuraEnabled
-    public static List<String> searchRecipeNames(String query, String maxReadyTime, String minCalories, String maxCalories){
+    public static List<Recipe__c> searchRecipeNames(String query, String maxReadyTime, String minCalories, String maxCalories){
         //hardcoded for now also need to move the apikey
         String apikey = '56d3e8df4bde46a0b7ca1c01fd344952';
         recipeList listOfRecipes;
-        List<String> recipeNames = new List<String>();
+        List<Recipe__c> recipeNames = new List<Recipe__c>();
         String queryBuilder = '';
 
         if(query != '')
@@ -76,12 +76,15 @@ public class foodDatabase {
             listOfRecipes = recipeList.parse(response.getBody());
              System.debug(listOfRecipes.number_Z);
             for (Integer i = 0; i < listOfRecipes.number_Z; i++){
-                recipeNames.add(listOfRecipes.results[i].title);
-                // System.debug(i);
-                 System.debug(listOfRecipes.results[i].title);
+                Recipe__c item = new Recipe__c();
+                item.Name = listOfRecipes.results[i].title;
+                item.item_ID__c = listOfRecipes.results[i].id;
+                recipeNames.add(item);
+                System.debug(item.Item_ID__c + ' ' + item.Name);
             }
         }
         
+        System.debug(recipeNames);
         return recipeNames;
     }
 

@@ -123,6 +123,11 @@
         <field>Recipe__c.Instructions__c</field>
         <readable>false</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Recipe__c.Item_ID__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
     <pageAccesses>
         <apexPage>AnswersHome</apexPage>
         <enabled>false</enabled>

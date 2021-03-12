@@ -1,7 +1,7 @@
 ({
     openModel: function(component, event, helper) {
        // Set isModalOpen attribute to true
-       helper.searchForId(component);
+       helper.searchForRecipe(component);
        component.set("v.isModalOpen", true);
     },
    
@@ -16,7 +16,7 @@
            var copy = newRec;
            delete copy.Id;
 
-           copy.name = component.get("v.recipeName");
+           copy.name = component.get("v.recipeName.Name");
            copy.instructions__c = component.get("v.recipeInstructions");
            copy.ingredients__c = component.get("v.recipeIngredients");
 

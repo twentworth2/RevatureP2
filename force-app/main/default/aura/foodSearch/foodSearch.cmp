@@ -1,7 +1,7 @@
 <aura:component controller = "foodDatabase" implements="forceCommunity:availableForAllPageTypes,flexipage:availableForAllPageTypes" access="global">
     
     <!--attributes-->
-    <aura:attribute name = "recipeNames" type = "List"/>
+    <aura:attribute name = "recipeNames" type = "Recipe__c[]"/>
     <aura:attribute name = "recipeMaxCalories" type = "String" default = ""/>
     <aura:attribute name = "recipeMinCalories" type = "String"  default = ""/>
     <aura:attribute name = "recipeMaxReadyTime" type = "String"  default = ""/>
@@ -19,7 +19,7 @@
                 <br/>
                 
                 <aura:iteration items="{!v.recipeNames}" var="recipe">
-                    <ui:outputText value="{!recipe}"/> <c:recipeModal recipeName = "{!recipe}"/> 
+                    <c:recipeModal recipeName = "{!recipe}"/> 
                     <br/>
                 </aura:iteration>
                 <lightning:button label = "Search Recipes"  onclick="{!c.searchFoodonClick}"/>
