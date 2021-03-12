@@ -1,4 +1,4 @@
-public with sharing class foodDatabase {
+public class foodDatabase {
     public foodDatabase() {
 
     }

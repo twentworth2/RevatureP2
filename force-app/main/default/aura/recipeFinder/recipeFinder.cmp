@@ -1,4 +1,4 @@
-<aura:component  implements="forceCommunity:availableForAllPageTypes, flexipage:availableForAllPageTypes" access="global">
+<aura:component  implements="forceCommunity:availableForAllPageTypes,flexipage:availableForAllPageTypes" access="global">
     <lightning:layout>
         <lightning:layoutItem size="8">
             <c:foodSearch/>
@@ -8,4 +8,4 @@
             <c:randomRecipe/>
         </lightning:layoutItem>
     </lightning:layout>
-</aura:component>	
+</aura:component>

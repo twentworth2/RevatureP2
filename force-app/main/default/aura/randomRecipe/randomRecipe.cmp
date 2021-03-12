@@ -1,4 +1,4 @@
-<aura:component controller = "foodDatabase" implements="forceCommunity:availableForAllPageTypes, flexipage:availableForAllPageTypes" access="global">
+<aura:component controller = "foodDatabase" implements="forceCommunity:availableForAllPageTypes,flexipage:availableForAllPageTypes" access="global">
     
     <!--attributes-->
     <aura:attribute name = "recipeName" type = "String"/>
