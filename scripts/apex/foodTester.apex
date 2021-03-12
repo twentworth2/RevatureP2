@@ -1,0 +1,10 @@
+// params String query, String maxReadyTime, String minCalories, String maxCalories, String includeIngredients
+//foodDatabase.searchRecipes('pasta', '', '', '');
+// foodDatabase.searchRecipes();
+//foodDatabase.searchRecipeById(716426);
+Recipe__c r = new Recipe__c();
+r.name = 'cauliflower';
+r.instructions__c = 'cook it';
+r.ingredients__c = 'dirt';
+String input = JSON.stringify(r);
+foodDatabase.saveRecipe(input);

@@ -1,0 +1,30 @@
+<aura:component controller = "foodDatabase" implements="forceCommunity:availableForAllPageTypes, flexipage:availableForAllPageTypes" access="global">
+    
+    <!--attributes-->
+    <aura:attribute name = "recipeName" type = "String"/>
+    <aura:attribute name = "recipeSummary" type = "String"/>
+    <aura:attribute name = "recipeIngredients" type = "String"/>
+    <aura:attribute name = "recipeInstructions" type = "String"/>
+    <aura:attribute name = "recipeTags" type = "String" default = ""/>
+
+    <div class="slds-size_large">
+        <lightning:card>
+            <h2 class="header">Random Recipe</h2>
+            <lightning:tabset>
+                <lightning:tab label = "Recipe Info">
+                    <ui:outputText class="slds-text-heading_large" value="{!v.recipeName}"/>
+                    <br/>
+                    <aura:unescapedHtml value="{!v.recipeSummary}"/>
+                </lightning:tab>
+                <lightning:tab label = "Ingredients">
+                    <ui:outputText value="{!v.recipeIngredients}"/>
+                </lightning:tab>
+                <lightning:tab label = "Instructions">
+                    <aura:unescapedHtml value="{!v.recipeInstructions}"/>
+                </lightning:tab>
+            </lightning:tabset> 
+            <lightning:button label = "Get Random Recipe"  onclick="{!c.getRandomRecipe}"/>
+           <!--<ui:inputText label = "Make it less random" value = "{!v.recipeTags}"/>--> 
+        </lightning:card>
+    </div>
+</aura:component>

@@ -1,0 +1,29 @@
+<aura:component controller = "foodDatabase" implements="forceCommunity:availableForAllPageTypes, flexipage:availableForAllPageTypes" access="global">
+    
+    <!--attributes-->
+    <aura:attribute name = "recipeNames" type = "List"/>
+    <aura:attribute name = "recipeMaxCalories" type = "String" default = ""/>
+    <aura:attribute name = "recipeMinCalories" type = "String"  default = ""/>
+    <aura:attribute name = "recipeMaxReadyTime" type = "String"  default = ""/>
+    <aura:attribute name = "recipeQuery" type = "String"  default = ""/>
+
+    <div class="slds-size_large">
+        <lightning:card>
+                <div class="row">
+                    <h2 class="header">Advanced Search</h2>
+                    <lightning:input type="text" name="input1" label="Keywords" value="{!v.recipeQuery}"/>
+                    <lightning:input type="text" name="input2" label=" Max Calories" value="{!v.recipeMaxCalories}"/>
+                    <lightning:input type="text" name="input3" label="Min Calories" value="{!v.recipeMinCalories}"/>
+                    <lightning:input type="text" name="input4" label="Max Ready Time" value="{!v.recipeMaxReadyTime}"/>
+                </div>
+                <br/>
+                
+                <aura:iteration items="{!v.recipeNames}" var="recipe">
+                    <ui:outputText value="{!recipe}"/> <c:recipeModal recipeName = "{!recipe}"/> 
+                    <br/>
+                </aura:iteration>
+                <lightning:button label = "Search Recipes"  onclick="{!c.searchFoodonClick}"/>
+            </lightning:card>
+    </div>
+    
+</aura:component>
