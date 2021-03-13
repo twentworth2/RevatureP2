@@ -5,7 +5,7 @@
 // and so can only be parsed with explicitly generated code, this option
 // was auto selected for you.
 
-public class recipeList {
+public without sharing class recipeList {
 
 	public Integer offset {get;set;} 
 	public Integer number_Z {get;set;} // in json: number

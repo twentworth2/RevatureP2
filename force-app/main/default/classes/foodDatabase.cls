@@ -1,4 +1,4 @@
-public class foodDatabase {
+public without sharing class foodDatabase {
     public foodDatabase() {
 
     }
@@ -74,20 +74,22 @@ public class foodDatabase {
 
         if (response.getStatusCode() == 200){
             listOfRecipes = recipeList.parse(response.getBody());
-             System.debug(listOfRecipes.number_Z);
+             System.debug(response.getBody());
             for (Integer i = 0; i < listOfRecipes.number_Z; i++){
                 Recipe__c item = new Recipe__c();
                 item.Name = listOfRecipes.results[i].title;
                 item.item_ID__c = listOfRecipes.results[i].id;
                 recipeNames.add(item);
-                System.debug(item.Item_ID__c + ' ' + item.Name);
+              //  System.debug(item.Item_ID__c + ' ' + item.Name);
             }
         }
         
-        System.debug(recipeNames);
+       // System.debug(recipeNames);
         return recipeNames;
     }
 
+
+    //Not actually used, didnt work like I wanted
     @AuraEnabled
     public static Integer searchRecipeId(String query){
         //hardcoded for now also need to move the apikey
