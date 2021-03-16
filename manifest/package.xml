@@ -67,6 +67,11 @@
         <name>CustomTab</name>
     </types>
 
+    <types>
+        <members>*</members>
+        <name>RemoteSiteSetting</name>
+    </types>
+
     <version>50.0</version>
 
 </Package>
